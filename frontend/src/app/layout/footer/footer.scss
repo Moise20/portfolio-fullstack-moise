@@ -1,0 +1,17 @@
+@use 'styles/theme' as *;
+
+.footer {
+  background: $color-surface;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba($color-text, 0.7);
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

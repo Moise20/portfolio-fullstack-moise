@@ -1,0 +1,23 @@
+<section class="section">
+  <h2>Compétences</h2>
+
+  <div class="skills">
+    <div class="card">
+      <h3>Frontend</h3>
+      <ul>
+        <li *ngFor="let skill of frontendSkills">
+          {{ skill.name }} - {{ skill.level }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Backend</h3>
+      <ul>
+        <li *ngFor="let skill of backendSkills">
+          {{ skill.name }} - {{ skill.level }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
