@@ -1,1 +1,59 @@
-<p>contact works!</p>
+
+<section class="contact section" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contactez Moi</h2>
+
+  <div class="grid">
+    <!-- ===== Colonne gauche : cartes ===== -->
+    <div class="cards">
+      <!-- Email -->
+      <article class="card" aria-labelledby="card-email-title">
+        <div class="card__icon" aria-hidden="true">✉️</div>
+        <h3 id="card-email-title" class="card__title">Email</h3>
+        <p class="card__value">{{ email }}</p>
+        <a class="card__cta" [href]="'mailto:' + email">Envoyez un message</a>
+      </article>
+
+      <!-- WhatsApp -->
+      <article class="card" aria-labelledby="card-wa-title">
+        <div class="card__icon" aria-hidden="true">📱</div>
+        <h3 id="card-wa-title" class="card__title">WhatsApp</h3>
+        <p class="card__value">{{ phoneIntl }}</p>
+        <a class="card__cta" [href]="whatsappHref" target="_blank" rel="noopener"
+          >Envoyez un message</a
+        >
+      </article>
+    </div>
+
+    <!-- ===== Colonne droite : formulaire ===== -->
+    <form class="form card" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <label class="field">
+        <span class="field__label">Votre nom</span>
+        <input class="field__control" type="text" formControlName="name" placeholder="Votre nom" />
+        <small class="field__error" *ngIf="f.name.touched && f.name.invalid">
+          Le nom est requis (min. 2 caractères).
+        </small>
+      </label>
+
+      <label class="field">
+        <span class="field__label">Votre email</span>
+        <input class="field__control" type="email" formControlName="email" placeholder="Votre email" />
+        <small class="field__error" *ngIf="f.email.touched && f.email.invalid">
+          Entrez un email valide.
+        </small>
+      </label>
+
+      <label class="field">
+        <span class="field__label">Votre message</span>
+        <textarea class="field__control field__control--textarea" rows="7"
+                  formControlName="message" placeholder="Votre message"></textarea>
+        <small class="field__error" *ngIf="f.message.touched && f.message.invalid">
+          Message requis (min. 10 caractères).
+        </small>
+      </label>
+
+      <button class="btn" type="submit" [disabled]="form.invalid">
+        Envoyez Votre Message
+      </button>
+    </form>
+  </div>
+</section>
