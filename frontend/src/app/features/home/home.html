@@ -9,16 +9,26 @@
     <!-- Boutons CV + Contact -->
     <div class="hero__cta">
       <!-- Bouton ghost (transparent) pour télécharger le CV -->
-      <a class="btn btn--ghost" href="assets/cv.pdf" download>Mon CV</a>
+      <a class="btn btn--ghost" href="/cv-moise-pana.pdf" download="Moise_Pana_CV.pdf">Mon CV</a>
       <!-- Bouton rempli qui mène à la page Contact -->
       <a class="btn" routerLink="/contact">Contactez-moi</a>
     </div>
   </div>
 
   <!-- Partie droite : photo dans un cadre stylisé -->
-  <div class="hero__photo">
-    <div class="hero__frame">
-      <img src="assets/photo_pro_sopra_steria.jpg" alt="Photo de Moïse" />
+<div class="hero__photo">
+  <div class="hero__stack">
+    <!-- Carte bleue du fond -->
+    <div class="hero__bg"></div>
+
+    <!-- Carte violette au premier plan (celle qui s'anime) -->
+    <div class="hero__card">
+      <img
+        class="hero__img"
+        src="/assets/images/hero/photo_pro_sopra_steria.jpg"
+        alt="Photo de Moïse PANA"
+      />
     </div>
   </div>
+</div>
 </section>
