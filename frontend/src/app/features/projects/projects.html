@@ -1,1 +1,28 @@
-<p>projects works!</p>
+<section class="projects section" aria-labelledby="projects-title">
+  <p class="overline">Mes Projets</p>
+  <h2 id="projects-title">Portfolio</h2>
+
+  <!-- Grille 2 colonnes -->
+  <div class="projects__grid">
+    <article class="card" *ngFor="let p of projects; trackBy: trackByTitle">
+      <!-- Aperçu -->
+      <div class="card__thumb">
+        <img [src]="p.image" [alt]="p.title" />
+      </div>
+
+      <!-- Corps -->
+      <div class="card__body">
+        <h3 class="card__title">{{ p.title }}</h3>
+
+        <div class="card__actions">
+          <a class="btn btn--ghost"
+             [href]="p.repoUrl" target="_blank" rel="noopener noreferrer">Github</a>
+
+          <a class="btn"
+             *ngIf="p.demoUrl"
+             [href]="p.demoUrl" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
