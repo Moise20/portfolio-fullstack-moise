@@ -1,0 +1,14 @@
+<nav class="dock" aria-label="Navigation flottante">
+  <ul class="dock__list">
+    <li class="dock__item" *ngFor="let s of sections">
+      <button
+        type="button"
+        class="dock__btn"
+        [class.is-active]="active === s.id"
+        [attr.aria-label]="s.label"
+        (click)="go(s.id)">
+        <span class="dock__icon" [attr.data-icon]="s.icon"></span>
+      </button>
+    </li>
+  </ul>
+</nav>
