@@ -6,46 +6,50 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  // ✅ Standalone => on importe ici ce dont on a besoin
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.html',
-  styleUrls: ['./contact.scss'] // ✅ pluriel
+  styleUrls: ['./contact.scss']
 })
 export class Contact {
-  // ⚙️ Config perso
-  email = 'panaessognim@gmail.com';      // ⬅️ à remplacer
-  phoneIntl = '+33669205864';           // ⬅️ format international (pour WhatsApp)
+  // ⚙️ Tes infos
+  email = 'panaessognim@gmail.com';   // ← ton adresse
+  phoneIntl = '+33669205864';         // ← pour WhatsApp
 
-  // ✅ Injection moderne sans constructeur (satisfait le linter)
   private fb = inject(FormBuilder);
 
-
-  // 🧠 Reactive Form + validations
+  // 🧠 Formulaire réactif
   form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
-
-
   get f() { return this.form.controls; }
 
-  // 🔗 Lien WhatsApp "click to chat"
+  // 🔗 Lien WhatsApp
   get whatsappHref(): string {
     const text = encodeURIComponent('Bonjour Moïse, je souhaite échanger avec vous à propos de…');
     return `https://wa.me/${this.phoneIntl.replace(/\D/g, '')}?text=${text}`;
   }
 
+  // ✉️ Version v1: ouvrir le client mail de l'utilisateur avec le message prérempli
   onSubmit(): void {
     if (this.form.invalid) {
-      // Marque tout comme "touched" pour afficher les erreurs
       this.form.markAllAsTouched();
       return;
     }
-    // 👉 Ici, on enverra au backend (Sprint 2). Pour l’instant, simple log.
-    console.log('Contact payload', this.form.getRawValue());
-    alert('Merci ! Votre message a bien été préparé (simulation).');
+
+    const { name, email, message } = this.form.getRawValue();
+
+    const subject = encodeURIComponent(`Contact portfolio – ${name}`);
+    const body = encodeURIComponent(
+      `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nEnvoyé depuis le portfolio`
+    );
+
+    // Ouvre le client mail de l'utilisateur
+    window.location.href = `mailto:${encodeURIComponent(this.email)}?subject=${subject}&body=${body}`;
+
+    // Optionnel : réinitialiser le formulaire après le clic
     this.form.reset();
   }
 }
