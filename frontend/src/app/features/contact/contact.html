@@ -51,9 +51,21 @@
         </small>
       </label>
 
-      <button class="btn" type="submit" [disabled]="form.invalid">
-        Envoyez Votre Message
-      </button>
+      <button class="btn" type="submit" [disabled]="form.invalid || loading">
+  {{ loading ? 'Envoi…' : 'Envoyez Votre Message' }}
+</button>
+
+<p *ngIf="successMsg" role="status" aria-live="polite"
+   style="margin-top:.5rem;color:#6ee7b7">
+  {{ successMsg }}
+</p>
+
+<p *ngIf="errorMsg" role="alert" aria-live="assertive"
+   style="margin-top:.5rem;color:#fca5a5">
+  {{ errorMsg }}
+</p>
+
+
     </form>
   </div>
 </section>
