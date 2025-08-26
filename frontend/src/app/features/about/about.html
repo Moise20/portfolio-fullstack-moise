@@ -1,0 +1,21 @@
+<section id="about" class="about section" aria-labelledby="about-title">
+  <h2 id="about-title">À propos de moi</h2>
+
+  <!-- Grille des diplômes -->
+  <div class="about__cards">
+    <article class="card" *ngFor="let d of diplomas">
+      <div class="card__icon" aria-hidden="true">{{ d.icon || '🎓' }}</div>
+      <h3 class="card__title">{{ d.title }}</h3>
+      <p class="card__line">{{ d.line1 }}</p>
+      <p class="card__line" *ngIf="d.line2">{{ d.line2 }}</p>
+    </article>
+  </div>
+
+  <!-- Texte de présentation -->
+  <p class="about__text">
+    {{ intro }}
+  </p>
+
+  <!-- CTA vers la page Contact -->
+  <a class="btn about__cta" routerLink="/contact">Échangez avec moi</a>
+</section>

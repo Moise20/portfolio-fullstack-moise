@@ -1,0 +1,42 @@
+@use 'styles/theme' as *;
+
+.navbar {
+  background: $color-surface;
+  padding: 1rem 0;
+  box-shadow: $shadow-card;
+
+  &__content {
+    @include container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    .active {
+      color: $color-primary;
+    }
+  }
+}

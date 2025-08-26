@@ -1,0 +1,54 @@
+// 🎨 ======= Thème global du site =======
+// On définit ici toutes les couleurs, tailles et styles communs
+// Avantage : si tu veux changer la couleur principale ou les arrondis,
+// tu modifies juste ici et tout le site est mis à jour.
+
+$color-bg: #11162a;          // Couleur de fond principale (bleu nuit)
+$color-surface: #2a2f5a;     // Couleur des "cartes" et blocs en relief
+$color-primary: #54b3ff;     // Couleur bleue principale
+$color-primary-600: #3aa2f5; // Variation plus foncée de la couleur principale
+$color-text: #e7ecff;        // Couleur du texte principal
+
+$radius-xl: 2rem;            // Grands arrondis (images, cartes principales)
+$radius-lg: 1.5rem;          // Arrondis moyens
+$radius-md: 1rem;            // Petits arrondis
+
+$shadow-card: 0 10px 25px rgba(0,0,0,.25); // Ombre standard des cartes
+
+// Points de rupture (breakpoints) pour le responsive
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// 📦 Mixin "container"
+// Permet de centrer et limiter la largeur max du contenu
+@mixin container {
+  width: min(1100px, 92%); // 1100px max ou 92% de la largeur de l'écran
+  margin-inline: auto;     // Centre horizontalement
+}
+
+// 🔘 Mixin "btn" pour créer un style de bouton
+// $filled = true => bouton rempli (couleur de fond)
+// $filled = false => bouton "ghost" (transparent avec bordure)
+@mixin btn($filled: true) {
+  padding: .9rem 1.25rem;
+  border-radius: .8rem;
+  border: 1px solid $color-primary;
+  font-weight: 600;
+  cursor: pointer;
+
+  @if $filled {
+    background: $color-primary;
+    color: #0b132b; // texte foncé pour contraste
+  } @else {
+    background: transparent;
+    color: $color-text;
+  }
+
+  // Animation au survol
+  transition: transform .15s ease, filter .15s ease;
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+}

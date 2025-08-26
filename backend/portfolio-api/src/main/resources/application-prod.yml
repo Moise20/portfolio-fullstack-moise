@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}?sslmode=require}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+app:
+  cors:
+    allowed-origins:
+      - https://ton-domaine.netlify.app
+      - https://ton-domaine.vercel.app

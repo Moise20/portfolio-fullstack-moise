@@ -1,0 +1,24 @@
+<section id="skills" class="skills section" aria-labelledby="skills-title">
+
+  <h2 id="skills-title">Mes Compétences</h2>
+
+  <div class="skills__grid">
+    <article class="card" *ngFor="let group of groups">
+      <h3 class="card__title">{{ group.title }}</h3>
+
+      <ul class="list">
+        <li class="list__item" *ngFor="let s of group.items">
+          <!-- Icône hexagone + check (exactement comme la maquette) -->
+          <svg class="list__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <!-- hexagone (couleur = thème via CSS) -->
+            <path class="hex" d="M12 2l9 5v10l-9 5-9-5V7z"></path>
+            <!-- check blanc -->
+            <path class="check" d="M10.2 15.2l-3-3 1.4-1.4 1.6 1.6 4-4 1.4 1.4-5.4 5.4z"></path>
+          </svg>
+
+          <span>{{ s.name }}</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>

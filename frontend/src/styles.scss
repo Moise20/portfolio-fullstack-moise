@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+// On importe le thème global créé ci-dessus
+@use 'styles/theme' as *;
+
+// ======= Styles généraux du site =======
+
+// On force le mode sombre
+:root { color-scheme: dark; }
+
+// Tout élément utilise box-sizing pour éviter les soucis de calcul de tailles
+* { box-sizing: border-box; }
+
+// Le html et body prennent toute la hauteur
+html {
+  height: 100%;
+  scroll-behavior: smooth;         // <— défilement fluide
+}
+body { height: 100%; }
+/* When navigating to #ids, keep the section title visible under the fixed navbar */
+section {
+  scroll-margin-top: 80px;         // <— ajuste à la hauteur réelle de ta navbar
+}
+
+// Style du body (arrière-plan + police)
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  background: $color-bg;
+  color: $color-text;
+
+  // Motif discret de fond (petits points clairs)
+  background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+// Classe utilitaire "section" pour espacer les sections
+.section {
+  @include container; // centré + largeur max
+  padding: 3rem 0;    // espace en haut et bas
+}
+
+// Titres
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
+  line-height: 1.15;
+}
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: $color-primary; }
+
+// Style de base des cartes
+.card {
+  background: $color-surface;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-card;
+  padding: 1.5rem;
+}
+
+// Boutons : version remplie et version ghost
+.btn { @include btn(true); }
+.btn--ghost { @include btn(false); }

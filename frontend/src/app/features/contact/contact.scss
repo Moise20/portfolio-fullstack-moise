@@ -1,0 +1,88 @@
+// src/app/features/contact/contact.scss
+@use 'sass:color';
+@use 'styles/theme' as *;
+
+.contact {
+  .overline { opacity:.8; font-weight:600; margin-bottom:.25rem; }
+  h2 { margin-bottom: 2rem;text-align: center;        // ✅ centre le texte
+    margin-inline: auto;       // ✅ centre l’élément lui-même
+    width: fit-content;        // ✅ évite que le titre prenne toute la largeur
+    }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 2rem;
+
+    @media (max-width: $bp-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== Cartes gauche (email / whatsapp) ===== */
+  .cards {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: $color-surface;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-card;
+    padding: 1.5rem;
+  }
+
+  .card__icon { font-size: 1.6rem; }
+  .card__title { margin:.25rem 0 .2rem 0; }
+  .card__value { opacity:.9; margin:0 0 .75rem 0; }
+  .card__cta {
+    display:inline-block;
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid $color-primary;
+    padding: .5rem .75rem;
+    border-radius: .6rem;
+    transition: transform .15s ease, filter .15s ease;
+    &:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  }
+
+  /* ===== Formulaire ===== */
+  .form { display: grid; gap: 1rem; }
+
+  .field {
+    display: grid; gap: .4rem;
+    &__label { opacity:.9; font-weight:600; }
+    &__control {
+      width: 100%;
+      border: 1px solid color.adjust($color-primary, $lightness: -25%);
+      background: rgba(255,255,255,.02);
+      color: $color-text;
+      border-radius: .8rem;
+      padding: .9rem 1rem;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+
+      &::placeholder { color: rgba($color-text, .6); }
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, .2);
+      }
+
+      &--textarea { resize: vertical; min-height: 160px; }
+    }
+    &__error { color: color.adjust($color-primary, $lightness: 15%); font-size: .85rem; }
+  }
+
+  .btn {
+    @include btn(true);
+    background: $color-primary;
+    color: #0b132b;
+    justify-self: start;
+
+    &:disabled {
+      opacity:.6; cursor:not-allowed; transform:none !important; filter:none !important;
+    }
+  }
+}

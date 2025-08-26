@@ -1,0 +1,12 @@
+{
+  "frontend": [
+    { "name": "Angular", "level": "Avancé" },
+    { "name": "HTML/CSS/SCSS", "level": "Avancé" },
+    { "name": "TypeScript", "level": "Intermédiaire" }
+  ],
+  "backend": [
+    { "name": "Spring Boot", "level": "Intermédiaire" },
+    { "name": "Hibernate/JPA", "level": "Débutant" },
+    { "name": "PostgreSQL", "level": "Débutant" }
+  ]
+}

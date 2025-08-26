@@ -1,0 +1,64 @@
+@use 'styles/theme' as *;
+
+/* ===== En-tête et conteneur ===== */
+.skills {
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: center;
+
+  .overline { opacity: .8; font-weight: 600; margin-bottom: .25rem; }
+  h2 { margin-bottom: 2rem; }
+}
+
+/* ===== Grille : 2 cartes par ligne ===== */
+.skills__grid {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  justify-content: center;
+  align-items: stretch;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+
+  @media (max-width: $bp-lg) { grid-template-columns: 1fr; }
+}
+
+/* ===== Carte ===== */
+.card {
+  background: $color-surface;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-card;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.card__title {
+  margin: .25rem 0 1rem 0;
+  font-weight: 800;
+  color: $color-primary;
+}
+
+/* ===== Liste de compétences ===== */
+.list {
+  display: grid;
+  gap: .9rem 2.25rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 720px) { grid-template-columns: 1fr; }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    justify-content: flex-start;
+  }
+}
+
+/* ===== Icône hexagone + check (exact comme la capture) ===== */
+.list__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-block;
+  filter: drop-shadow(0 0 4px rgba($color-primary, .22)); /* halo doux */
+
+  .hex   { fill: $color-primary; } /* couleur thème */
+  .check { fill: #fff; }           /* check blanc */
+}
