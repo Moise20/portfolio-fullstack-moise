@@ -19,6 +19,7 @@ spring:
 app:
   cors:
     allowed-origins:
+      - https://portfolio-fullstack-moise.onrender.com
       - https://sparkly-salamander-21f217.netlify.app
       - https://wonderful-bombolone-333898.netlify.app
       - https://ton-domaine.netlify.app
