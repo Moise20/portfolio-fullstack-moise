@@ -19,5 +19,6 @@ spring:
 app:
   cors:
     allowed-origins:
+      - https://wonderful-bombolone-333898.netlify.app
       - https://ton-domaine.netlify.app
       - https://ton-domaine.vercel.app
