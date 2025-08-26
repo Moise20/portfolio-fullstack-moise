@@ -20,7 +20,7 @@ export interface Message {
 @Injectable({ providedIn: 'root' })
 export class ContactService {
   private http = inject(HttpClient);
-  private base = environment.apiUrl;
+  private base = environment.apiBaseUrl;
 
   create(dto: ContactDto): Observable<Message> {
     return this.http.post<Message>(`${this.base}/contact`, dto);
