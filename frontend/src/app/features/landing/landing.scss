@@ -1,2 +1,10 @@
-/* Un peu d’air entre les sections si besoin */
-.section { margin-block: clamp(2rem, 6vw, 4rem); }
+
+/* utilitaire global (ex. dans styles.scss) */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 2rem); // ajuste l’espace vertical entre les sections
+}
+
+
+

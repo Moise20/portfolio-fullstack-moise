@@ -36,11 +36,9 @@ export class About {
   ];
 
   // ✍️ Texte de présentation (modifie comme tu veux)
-  intro = `Bonjour ! Je m'appelle Moïse, je suis un développeur Web Full Stack
-  passionné par les nouvelles technologies. Actuellement en formation,
-  je poursuis un parcours Angular + Spring Boot pour créer des applis
-  performantes et maintenables.
+  intro = `Bonjour ! Je m’appelle Moïse. Ingénieur logiciel, titulaire d’un Master en Développement Web & Mobile, spécialisé en Angular + Spring Boot.
+Je conçois des applications web et mobiles (Android/iOS) robustes, testées et prêtes pour la production, avec automatisation CI/CD (Docker, GitLab CI/CD, PostgreSQL), en tirant parti des services AWS selon les besoins (EC2, Lambda, S3, RDS, CloudFront, CloudFormation).
+Ma spécialité : transformer un besoin métier en produit simple, rapide et maintenable.
+Si vous recherchez un ingénieur capable de livrer en production et de collaborer efficacement avec les équipes Design, Data et Ops, prenons contact.`;
 
-  Mon objectif : devenir expert en développement full-stack et contribuer à des
-  projets ambitieux, notamment dans le domaine de l’IA.`;
 }
