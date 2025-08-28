@@ -29,7 +29,7 @@ export class Projects {
 
 
       title: 'LinkedIn Clone',
-      image: 'assets/images/projects/twitch-clone.jpg',
+      image: '/assets/images/hero/image_linkdOut.png',
       repoUrl: 'https://github.com/Moise20/Linkdeen_Blog_projet_React_Native'
       // pas de demoUrl => seul le bouton GitHub s’affichera
     },
