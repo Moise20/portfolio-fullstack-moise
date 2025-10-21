@@ -20,6 +20,12 @@ export class Projects {
   // 🧱 Liste des projets (ajoute/supprime ici)
   projects: ProjectCard[] = [
     {
+      title: 'Gym PANAS – Site de gym',
+      image: '/assets/images/hero/capture_site_gym_app.PNG', // 📸 Mets ici ta capture
+      repoUrl: 'https://github.com/Moise20/gymAppMo-se',
+      demoUrl: 'https://gym-panas.netlify.app' // 🌐 lien Netlify live demo 
+    },
+    {
       title: 'Site E-commerce Fictif',
       image: '/assets/images/hero/Capture_site_ecommerce_fictif.png',
       repoUrl: 'https://github.com/Moise20/ReactJS-frontend-projetFinal',
