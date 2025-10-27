@@ -26,6 +26,12 @@ export class Projects {
       demoUrl: 'https://gym-panas.netlify.app' // 🌐 lien Netlify live demo 
     },
     {
+    title: 'Netflix Clone – Angular App',
+    image: '/assets/images/projects/netflix_clone_image_principale.PNG',
+    repoUrl: 'https://github.com/Moise20/netflix-clone',
+    demoUrl: 'https://streamflix-moise.netlify.app/'
+  },
+    {
       title: 'Site E-commerce Fictif',
       image: '/assets/images/hero/Capture_site_ecommerce_fictif.png',
       repoUrl: 'https://github.com/Moise20/ReactJS-frontend-projetFinal',
