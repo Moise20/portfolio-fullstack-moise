@@ -27,7 +27,7 @@ export class Projects {
     },
     {
     title: 'Netflix Clone – Angular App',
-    image: '/assets/images/projects/netflix_clone_image_principale.PNG',
+    image: '/assets/images/hero/netflix_clone_image_principale.PNG',
     repoUrl: 'https://github.com/Moise20/netflix-clone',
     demoUrl: 'https://streamflix-moise.netlify.app/'
   },
